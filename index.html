@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="KAIZEN® Concreto Confiable — producción y suministro de concreto premezclado de alta calidad para proyectos residenciales, comerciales, industriales y de infraestructura."
+    />
+    <title>KAIZEN® — Concreto Confiable</title>
+    <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="page">
+    <div class="loader" id="loader">
+      <svg class="loader__mark" viewBox="0 0 100 124" aria-hidden="true">
+        <use href="#kaizen-mark" />
+      </svg>
+      <p class="loader__text">Concreto confiable</p>
+    </div>
+
+    <svg class="page__defs" aria-hidden="true">
+      <defs>
+        <g id="kaizen-mark" transform="translate(0 7.9) scale(1.082)">
+          <path d="M34.2,0 58,0 70,20.6 92.2,20.6 92.4,49.2 66.8,49.6 92.4,63.3 92.2,100 46.4,81.6 36.3,91.2 25.4,96.9 12.5,99.9 0,99.6 0,61.1 10.3,60.9 18.1,58.9 23.1,55.2 25.1,50.8 25,49.3 0,49.3 0,20.6 22.3,20.6 34.1,0.1 Z" />
+        </g>
+      </defs>
+    </svg>
+
+    <header class="header">
+      <a class="header__brand" href="index.html">
+        <img
+          class="header__logo"
+          src="./assets/images/logo.png"
+          alt="KAIZEN — Concreto confiable"
+        />
+      </a>
+      <nav class="nav">
+        <button
+          class="nav__burger"
+          type="button"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <span class="nav__burger-line"></span>
+        </button>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link nav__link_active" href="index.html">Inicio</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="nosotros.html">Nosotros</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="productos.html">Productos</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="content">
+      <!-- HERO -->
+      <section class="hero">
+        <img
+          class="hero__image"
+          src="./assets/images/hero.jpg"
+          alt="Estructuras de concreto cruzándose en diagonal"
+        />
+        <p class="hero__slogan hero__slogan_position_left">
+          Construimos<br />tu futuro
+        </p>
+        <p class="hero__slogan hero__slogan_position_right">
+          Con concreto<br />que dura
+        </p>
+        <div class="hero__badge" aria-hidden="true">
+          <svg class="hero__badge-ring" viewBox="0 0 120 120">
+            <defs>
+              <path
+                id="badge-circle"
+                d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"
+              />
+            </defs>
+            <text class="hero__badge-text">
+              <textPath
+                href="#badge-circle"
+                textLength="286"
+                lengthAdjust="spacingAndGlyphs"
+              >
+                KAIZEN® / CALIDAD EN CADA MEZCLA /
+              </textPath>
+            </text>
+          </svg>
+        </div>
+        <h1 class="hero__title">
+          <img
+            class="hero__wordmark"
+            src="./assets/images/hero-wordmark.png"
+            alt="Kaizen — Concreto confiable"
+            width="1046"
+            height="238"
+          />
+        </h1>
+      </section>
+
+      <!-- INTRO -->
+      <section class="intro">
+        <div class="intro__body">
+          <h2 class="intro__title">
+            Brindamos soluciones que aportan<br />
+            resistencia y funcionalidad
+          </h2>
+          <div class="intro__columns">
+            <p class="intro__paragraph">
+              En KAIZEN® nos especializamos en la producción y suministro de
+              concreto premezclado de alta calidad para proyectos residenciales,
+              comerciales, industriales y de infraestructura.
+            </p>
+            <p class="intro__paragraph">
+              Desarrollamos soluciones integrales que responden a las necesidades
+              específicas de cada obra, desde rellenos fluidos, jalcreto y
+              concretos convencionales, hasta mezclas especializadas.
+            </p>
+          </div>
+        </div>
+        <a class="button intro__button" href="nosotros.html">Leer más</a>
+      </section>
+
+      <!-- MARQUEE -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span class="marquee__text">
+            Concreto confiable / Resultados sólidos / Proyectos que avanzan /
+          </span>
+          <span class="marquee__text">
+            Concreto confiable / Resultados sólidos / Proyectos que avanzan /
+          </span>
+        </div>
+      </div>
+
+      <!-- VIDEO -->
+      <section class="video">
+        <video
+          class="video__player"
+          src="./assets/videos/kaizen.mp4"
+          poster="./assets/images/video.jpg"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+        ></video>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta">
+        <h2 class="cta__title">
+          Construimos<br />tu futuro<br />con concreto<br />que dura
+        </h2>
+        <svg class="cta__mark" viewBox="0 0 100 124" aria-hidden="true">
+          <use href="#kaizen-mark" />
+        </svg>
+      </section>
+
+      <!-- DESTACA -->
+      <section class="destaca">
+        <div class="destaca__info">
+          <h2 class="destaca__title">Kaizen®<br />se destaca<br />por ofrecer</h2>
+          <img
+            class="destaca__logo"
+            src="./assets/images/destaca-logo.png"
+            alt=""
+            width="238"
+            height="272"
+            aria-hidden="true"
+          />
+        </div>
+        <ul class="destaca__list">
+          <li class="destaca__item">Entregas puntuales y confiables</li>
+          <li class="destaca__item">Plantas automatizadas de alta precisión</li>
+          <li class="destaca__item">
+            Soluciones especializadas para cada proyecto
+          </li>
+          <li class="destaca__item">Asesoría técnica personalizada</li>
+          <li class="destaca__item">
+            Concretos bombeables y de alto desempeño
+          </li>
+          <li class="destaca__item">Calidad garantizada en cada entrega</li>
+          <li class="destaca__item">Certificación de CEMEX CPRO</li>
+        </ul>
+      </section>
+
+      <!-- PRODUCTOS -->
+      <section class="productos">
+        <h2 class="visually-hidden">Nuestros productos y servicios</h2>
+        <ul class="productos__list">
+          <li class="productos__item">
+            <h3 class="productos__heading">
+              <button class="productos__header" type="button" aria-expanded="false">
+                <span class="productos__name">Concreto hidráulico</span>
+                <span class="productos__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="productos__panel">
+              <p class="productos__description">
+                Mezclas convencionales para todo tipo de obra / Resistencias de
+                f'c 150 a f'c 350 kg/cm² / La base confiable de cualquier
+                proyecto
+              </p>
+            </div>
+          </li>
+          <li class="productos__item">
+            <h3 class="productos__heading">
+              <button class="productos__header" type="button" aria-expanded="true">
+                <span class="productos__name">Concreto de fraguado rápido</span>
+                <span class="productos__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="productos__panel">
+              <p class="productos__description">
+                Proyectos de tiempo reducido / Alcanza su resistencia en pocas
+                horas / Ideal para reparaciones urgentes y obras de rápida
+                habilitación
+              </p>
+            </div>
+          </li>
+          <li class="productos__item">
+            <h3 class="productos__heading">
+              <button class="productos__header" type="button" aria-expanded="false">
+                <span class="productos__name">Concreto con fibras</span>
+                <span class="productos__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="productos__panel">
+              <p class="productos__description">
+                Refuerzo integral con fibras sintéticas o metálicas / Mayor
+                control de agrietamiento / Pisos industriales y pavimentos de
+                alto desempeño
+              </p>
+            </div>
+          </li>
+          <li class="productos__item">
+            <h3 class="productos__heading">
+              <button class="productos__header" type="button" aria-expanded="false">
+                <span class="productos__name">Línea especializada</span>
+                <span class="productos__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="productos__panel">
+              <p class="productos__description">
+                Rellenos fluidos, jalcreto y mezclas a la medida / Soluciones
+                diseñadas según las especificaciones de cada obra
+              </p>
+            </div>
+          </li>
+          <li class="productos__item">
+            <h3 class="productos__heading">
+              <button class="productos__header" type="button" aria-expanded="false">
+                <span class="productos__name">Servicios complementarios</span>
+                <span class="productos__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="productos__panel">
+              <p class="productos__description">
+                Bombeo de concreto / Asesoría técnica en obra / Laboratorio de
+                control de calidad y logística de entrega programada
+              </p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- OBRA -->
+      <section class="obra">
+        <img
+          class="obra__image"
+          src="./assets/images/obra.jpg"
+          alt="Muro de concreto en penumbra con luz lateral"
+        />
+        <div class="obra__content">
+          <h2 class="obra__title">
+            En Kaizen® entendemos que una obra no puede detenerse.
+          </h2>
+          <p class="obra__paragraph">
+            Trabajamos para convertirnos en un aliado estratégico que ofrece
+            soluciones de concreto diseñadas para cumplir con los tiempos,
+            especificaciones y exigencias de cada proyecto.
+          </p>
+          <a class="button button_theme_dark obra__button" href="contacto.html">
+            Cotiza ahora
+          </a>
+        </div>
+      </section>
+
+      <!-- RESISTENCIAS -->
+      <section class="resistencias">
+        <h2 class="resistencias__title">Resistencias disponibles</h2>
+        <div class="resistencias__scale" aria-hidden="true">
+          <div class="resistencias__bar"></div>
+          <div class="resistencias__knob"></div>
+        </div>
+        <ul class="resistencias__list">
+          <li class="resistencias__item resistencias__item_active">
+            <h3 class="resistencias__value">f'c 150<br />kg/cm²</h3>
+            <p class="resistencias__caption">Firmes y<br />banquetas</p>
+          </li>
+          <li class="resistencias__item">
+            <h3 class="resistencias__value">f'c 200<br />kg/cm²</h3>
+            <p class="resistencias__caption">Cimentaciones<br />ligeras</p>
+          </li>
+          <li class="resistencias__item">
+            <h3 class="resistencias__value">f'c 250<br />kg/cm²</h3>
+            <p class="resistencias__caption">Estructuras<br />residenciales</p>
+          </li>
+          <li class="resistencias__item">
+            <h3 class="resistencias__value">f'c 300<br />kg/cm²</h3>
+            <p class="resistencias__caption">
+              Concreto estructural<br />reforzado
+            </p>
+          </li>
+          <li class="resistencias__item">
+            <h3 class="resistencias__value">f'c 350<br />kg/cm²</h3>
+            <p class="resistencias__caption">
+              Concreto de alta<br />resistencia
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- PROYECTOS -->
+      <section class="proyectos">
+        <h2 class="visually-hidden">Proyectos</h2>
+        <ul class="proyectos__list">
+          <li class="proyectos__item">
+            <img
+              class="proyectos__image"
+              src="./assets/images/proyecto-1.jpg"
+              alt="Escaleras de concreto aparente"
+            />
+          </li>
+          <li class="proyectos__item proyectos__item_type_card">
+            <img
+              class="proyectos__image"
+              src="./assets/images/proyecto-2.jpg"
+              alt="Cuadrilla colando banquetas de concreto"
+            />
+            <div class="proyectos__overlay">
+              <h3 class="proyectos__name">Proyecto<br />087</h3>
+              <div class="proyectos__details">
+                <p class="proyectos__type">Banquetas</p>
+                <p class="proyectos__place">Periférico Norte<br />Zapopan, Jal.</p>
+              </div>
+            </div>
+          </li>
+          <li class="proyectos__item">
+            <img
+              class="proyectos__image"
+              src="./assets/images/proyecto-3.jpg"
+              alt="Colado de concreto en obra"
+            />
+          </li>
+        </ul>
+      </section>
+
+      <!-- SHOWCASE -->
+      <section class="showcase">
+        <p class="showcase__slogan showcase__slogan_position_left">
+          Construimos<br />tu futuro
+        </p>
+        <img
+          class="showcase__figure"
+          src="./assets/images/showcase-figure.png"
+          alt="Logotipo KAIZEN con textura de pavimento de concreto"
+          width="492"
+          height="507"
+        />
+        <p class="showcase__slogan showcase__slogan_position_right">
+          Con concreto<br />que dura
+        </p>
+      </section>
+
+      <!-- ENCUENTRA -->
+      <section class="encuentra">
+        <img
+          class="encuentra__image"
+          src="./assets/images/encuentra.jpg"
+          alt="Fachada oscura de paneles de concreto"
+        />
+        <div class="encuentra__content">
+          <h2 class="encuentra__title">Concreto confiable</h2>
+          <a class="button button_theme_dark encuentra__button" href="productos.html">
+            Ver productos
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span class="footer__monogram" aria-hidden="true"></span>
+      <div class="footer__info">
+        <address class="footer__address">
+          Av. La Paz<br />0123<br />CP. 44549<br />Guadalajara, Jal.
+        </address>
+        <div class="footer__contacts">
+          <a class="footer__link" href="tel:+523313215543">(52) 331 321 5543</a>
+          <a class="footer__link" href="mailto:hello@kaizen.com">
+            hello@kaizen.com
+          </a>
+        </div>
+        <div class="footer__socials">
+          <a
+            class="footer__social"
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Facebook"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill-rule="evenodd"
+                d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 10h2.2l.3-2.4H13V8.3c0-.7.2-1.2 1.2-1.2h1.3V5c-.2 0-1-.1-1.9-.1-1.9 0-3.1 1.1-3.1 3.2v1.5H8.3V12h2.2v6.5h2.4V12Z"
+              />
+            </svg>
+          </a>
+          <a
+            class="footer__social"
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Instagram"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 4.3c2.5 0 2.8 0 3.8.1 2.5.1 3.7 1.3 3.8 3.8 0 1 .1 1.3.1 3.8s0 2.8-.1 3.8c-.1 2.5-1.3 3.7-3.8 3.8-1 0-1.3.1-3.8.1s-2.8 0-3.8-.1c-2.5-.1-3.7-1.3-3.8-3.8 0-1-.1-1.3-.1-3.8s0-2.8.1-3.8c.1-2.5 1.3-3.7 3.8-3.8 1-.1 1.3-.1 3.8-.1ZM12 2.5c-2.6 0-2.9 0-3.9.1-3.4.2-5.3 2-5.5 5.5 0 1-.1 1.3-.1 3.9s0 2.9.1 3.9c.2 3.4 2 5.3 5.5 5.5 1 0 1.3.1 3.9.1s2.9 0 3.9-.1c3.4-.2 5.3-2 5.5-5.5 0-1 .1-1.3.1-3.9s0-2.9-.1-3.9c-.2-3.4-2-5.3-5.5-5.5-1-.1-1.3-.1-3.9-.1Zm0 4.6a4.9 4.9 0 1 0 0 9.8 4.9 4.9 0 0 0 0-9.8Zm0 8.1a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4Zm5.1-8.3a1.1 1.1 0 1 0 0-2.3 1.1 1.1 0 0 0 0 2.3Z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <img
+        class="footer__wordmark"
+        src="./assets/images/footer-wordmark.png"
+        alt=""
+        width="1304"
+        height="224"
+        aria-hidden="true"
+      />
+      <p class="footer__bar">Concreto confiable</p>
+    </footer>
+
+    <script src="./scripts/loader.js" defer></script>
+    <script src="./scripts/header.js" defer></script>
+    <script src="./scripts/video.js" defer></script>
+    <script src="./scripts/productos.js" defer></script>
+    <script src="./scripts/resistencias.js" defer></script>
+    <script src="./scripts/contacto.js" defer></script>
+    <script src="./scripts/animations.js" defer></script>
+  </body>
+</html>

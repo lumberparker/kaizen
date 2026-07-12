@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contacto KAIZEN® — cotiza tu proyecto de concreto premezclado. Escríbenos y te contactaremos muy pronto."
+    />
+    <title>KAIZEN® — Contacto</title>
+    <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="page">
+    <div class="loader" id="loader">
+      <svg class="loader__mark" viewBox="0 0 100 124" aria-hidden="true">
+        <use href="#kaizen-mark" />
+      </svg>
+      <p class="loader__text">Concreto confiable</p>
+    </div>
+
+    <svg class="page__defs" aria-hidden="true">
+      <defs>
+        <g id="kaizen-mark" transform="translate(0 7.9) scale(1.082)">
+          <path d="M34.2,0 58,0 70,20.6 92.2,20.6 92.4,49.2 66.8,49.6 92.4,63.3 92.2,100 46.4,81.6 36.3,91.2 25.4,96.9 12.5,99.9 0,99.6 0,61.1 10.3,60.9 18.1,58.9 23.1,55.2 25.1,50.8 25,49.3 0,49.3 0,20.6 22.3,20.6 34.1,0.1 Z" />
+        </g>
+      </defs>
+    </svg>
+
+    <header class="header">
+      <a class="header__brand" href="index.html">
+        <img
+          class="header__logo"
+          src="./assets/images/logo.png"
+          alt="KAIZEN — Concreto confiable"
+        />
+      </a>
+      <nav class="nav">
+        <button
+          class="nav__burger"
+          type="button"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <span class="nav__burger-line"></span>
+        </button>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="nosotros.html">Nosotros</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="productos.html">Productos</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link_active" href="contacto.html">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="content">
+      <!-- CONTACTO -->
+      <section class="contacto">
+        <div class="contacto__figure" aria-hidden="true">
+          <svg class="contacto__mark" viewBox="0 0 100 124">
+            <use href="#kaizen-mark" />
+          </svg>
+        </div>
+        <form class="contacto__form" name="contacto" novalidate>
+          <h2 class="contacto__title">Hello</h2>
+          <label class="contacto__field">
+            <span class="contacto__label">E-mail</span>
+            <input
+              class="contacto__input"
+              type="email"
+              name="email"
+              autocomplete="email"
+              required
+            />
+            <span class="contacto__error"></span>
+          </label>
+          <label class="contacto__field">
+            <span class="contacto__label">
+              Nombre completo / Nombre de la compañía
+            </span>
+            <input
+              class="contacto__input"
+              type="text"
+              name="nombre"
+              autocomplete="name"
+              minlength="2"
+              required
+            />
+            <span class="contacto__error"></span>
+          </label>
+          <label class="contacto__field">
+            <span class="contacto__label">Teléfono</span>
+            <input
+              class="contacto__input"
+              type="tel"
+              name="telefono"
+              autocomplete="tel"
+              pattern="[0-9()+\s-]{7,18}"
+            />
+            <span class="contacto__error"></span>
+          </label>
+          <label class="contacto__field contacto__field_type_message">
+            <span class="contacto__label">Mensaje</span>
+            <textarea
+              class="contacto__textarea"
+              name="mensaje"
+              rows="4"
+            ></textarea>
+            <span class="contacto__error"></span>
+          </label>
+          <button class="contacto__submit" type="submit">Enviar</button>
+          <p class="contacto__status" role="status"></p>
+        </form>
+      </section>
+
+      <!-- MARQUEE -->
+      <div class="marquee marquee_theme_blue" aria-hidden="true">
+        <div class="marquee__track">
+          <span class="marquee__text">
+            Concreto confiable / Resultados sólidos / Proyectos que avanzan /
+          </span>
+          <span class="marquee__text">
+            Concreto confiable / Resultados sólidos / Proyectos que avanzan /
+          </span>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span class="footer__monogram" aria-hidden="true"></span>
+      <div class="footer__info">
+        <address class="footer__address">
+          Av. La Paz<br />0123<br />CP. 44549<br />Guadalajara, Jal.
+        </address>
+        <div class="footer__contacts">
+          <a class="footer__link" href="tel:+523313215543">(52) 331 321 5543</a>
+          <a class="footer__link" href="mailto:hello@kaizen.com">
+            hello@kaizen.com
+          </a>
+        </div>
+        <div class="footer__socials">
+          <a
+            class="footer__social"
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Facebook"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill-rule="evenodd"
+                d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 10h2.2l.3-2.4H13V8.3c0-.7.2-1.2 1.2-1.2h1.3V5c-.2 0-1-.1-1.9-.1-1.9 0-3.1 1.1-3.1 3.2v1.5H8.3V12h2.2v6.5h2.4V12Z"
+              />
+            </svg>
+          </a>
+          <a
+            class="footer__social"
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Instagram"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 4.3c2.5 0 2.8 0 3.8.1 2.5.1 3.7 1.3 3.8 3.8 0 1 .1 1.3.1 3.8s0 2.8-.1 3.8c-.1 2.5-1.3 3.7-3.8 3.8-1 0-1.3.1-3.8.1s-2.8 0-3.8-.1c-2.5-.1-3.7-1.3-3.8-3.8 0-1-.1-1.3-.1-3.8s0-2.8.1-3.8c.1-2.5 1.3-3.7 3.8-3.8 1-.1 1.3-.1 3.8-.1ZM12 2.5c-2.6 0-2.9 0-3.9.1-3.4.2-5.3 2-5.5 5.5 0 1-.1 1.3-.1 3.9s0 2.9.1 3.9c.2 3.4 2 5.3 5.5 5.5 1 0 1.3.1 3.9.1s2.9 0 3.9-.1c3.4-.2 5.3-2 5.5-5.5 0-1 .1-1.3.1-3.9s0-2.9-.1-3.9c-.2-3.4-2-5.3-5.5-5.5-1-.1-1.3-.1-3.9-.1Zm0 4.6a4.9 4.9 0 1 0 0 9.8 4.9 4.9 0 0 0 0-9.8Zm0 8.1a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4Zm5.1-8.3a1.1 1.1 0 1 0 0-2.3 1.1 1.1 0 0 0 0 2.3Z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <img
+        class="footer__wordmark"
+        src="./assets/images/footer-wordmark.png"
+        alt=""
+        width="1304"
+        height="224"
+        aria-hidden="true"
+      />
+      <p class="footer__bar">Concreto confiable</p>
+    </footer>
+
+    <script src="./scripts/loader.js" defer></script>
+    <script src="./scripts/header.js" defer></script>
+    <script src="./scripts/productos.js" defer></script>
+    <script src="./scripts/resistencias.js" defer></script>
+    <script src="./scripts/contacto.js" defer></script>
+    <script src="./scripts/animations.js" defer></script>
+  </body>
+</html>

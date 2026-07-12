@@ -1,0 +1,170 @@
+.footer {
+  --footer-content-max: 1080px;
+  padding-top: clamp(56px, 8vw, 90px);
+  background-color: var(--color-paper);
+  overflow: hidden;
+}
+
+/* Blue variant used on the Nosotros page. */
+.footer_theme_blue {
+  background-color: var(--color-blue);
+}
+
+.footer_theme_blue .footer__address,
+.footer_theme_blue .footer__link,
+.footer_theme_blue .footer__social {
+  color: #fff;
+}
+
+.footer_theme_blue .footer__link:hover,
+.footer_theme_blue .footer__social:hover {
+  color: var(--color-beige);
+}
+
+.footer__monogram {
+  display: block;
+  width: 110px;
+  aspect-ratio: 156 / 153;
+  margin: 0 auto;
+  background-color: var(--color-dark);
+  -webkit-mask: url("../assets/images/footer-monogram.png") center / contain
+    no-repeat;
+  mask: url("../assets/images/footer-monogram.png") center / contain no-repeat;
+  animation: footer-monogram-spin 18s linear infinite;
+}
+
+/* Beige monogram + wordmark on the blue Nosotros footer. */
+.footer_theme_blue .footer__monogram {
+  background-color: #dcdbd2;
+}
+
+.footer_theme_blue .footer__wordmark {
+  /* Flatten PNG to solid #dcdbd2 (matches monogram). */
+  filter: brightness(0) invert(86.5%);
+}
+
+@keyframes footer-monogram-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer__monogram {
+    animation: none;
+  }
+}
+
+.footer__info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: end;
+  gap: 24px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--footer-content-max);
+  margin: clamp(40px, 6vw, 64px) auto 0;
+  padding: 0 var(--container-padding);
+}
+
+.footer__address {
+  font-size: 12px;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.7;
+}
+
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+}
+
+.footer__link {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer__link:hover {
+  color: var(--color-blue);
+}
+
+.footer__socials {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.footer__social {
+  color: var(--color-ink);
+  transition: color 0.25s ease;
+}
+
+.footer__social:hover {
+  color: var(--color-blue);
+}
+
+.footer__social svg {
+  width: 22px;
+  fill: currentColor;
+}
+
+.footer__wordmark {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--footer-content-max);
+  height: auto;
+  margin-top: clamp(40px, 6vw, 72px);
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+  padding: 0 var(--container-padding);
+  vertical-align: bottom;
+  line-height: 0;
+}
+
+.footer__bar {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  margin-top: -1px;
+  padding: 14px 0 18px;
+  text-align: center;
+  color: var(--color-beige);
+  background-color: var(--color-dark);
+}
+
+/* Flush wordmark to the bar so no blue hairline shows on Nosotros. */
+.footer_theme_blue .footer__wordmark {
+  display: block;
+  margin-bottom: 0;
+  /* Cover transparent bottom edge of the PNG against the bar. */
+  transform: translateY(1px);
+}
+
+.footer_theme_blue .footer__bar {
+  color: var(--color-blue);
+  background-color: var(--color-beige);
+  margin-top: -3px;
+}
+
+@media (max-width: 720px) {
+  .footer__info {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .footer__socials {
+    flex-direction: row;
+    align-items: center;
+  }
+}

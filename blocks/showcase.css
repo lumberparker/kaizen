@@ -1,0 +1,65 @@
+.showcase {
+  --figure-width: clamp(220px, 34vw, 440px);
+  /* showcase-figure.png is 492×507 */
+  --figure-height: calc(var(--figure-width) * 507 / 492);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: clamp(14px, 4vw, 48px);
+  padding: clamp(48px, 8vw, 100px) var(--container-padding);
+  background-color: var(--color-paper);
+  min-height: var(--figure-height);
+}
+
+.showcase__slogan {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  height: calc(var(--figure-height) / 2);
+  font-size: clamp(14px, 1.7vw, 22px);
+  font-weight: 700;
+  font-stretch: 112%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.25;
+  color: var(--color-blue);
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+}
+
+/* Starts at the bottom edge of the figure, extends to the center line. */
+.showcase__slogan_position_left {
+  align-self: flex-end;
+  transform: rotate(180deg);
+}
+
+/* Starts at the top edge of the figure, extends to the center line. */
+.showcase__slogan_position_right {
+  align-self: flex-start;
+}
+
+.showcase__figure {
+  display: block;
+  width: var(--figure-width);
+  height: auto;
+  align-self: flex-start;
+}
+
+@media (max-width: 720px) {
+  .showcase__slogan {
+    writing-mode: horizontal-tb;
+    text-align: center;
+    height: auto;
+  }
+
+  .showcase__slogan_position_left,
+  .showcase__slogan_position_right {
+    align-self: center;
+    transform: none;
+  }
+
+  .showcase {
+    flex-direction: column;
+    align-items: center;
+    min-height: 0;
+  }
+}

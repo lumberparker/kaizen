@@ -1,0 +1,161 @@
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: clamp(475px, 77.22vh, 753px);
+  padding: 0 var(--container-padding) 34px;
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Nudge crop focus slightly left and up. */
+  object-position: 34% 22%;
+  z-index: -2;
+}
+
+.hero__image[src*="hero-nosotros"] {
+  object-position: 34% 0%;
+}
+
+/* Legibility scrim: darkens the top (nav/label/slogans) and bottom
+   (wordmark) bands so light type and logo art read on any photo. */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(22, 25, 24, 0.32) 0%,
+    rgba(22, 25, 24, 0) 26%,
+    rgba(22, 25, 24, 0) 46%,
+    rgba(22, 25, 24, 0.5) 100%
+  );
+}
+
+.hero_type_inner::after {
+  background: linear-gradient(
+      110deg,
+      rgba(26, 30, 29, 0.55) 0%,
+      rgba(26, 30, 29, 0.12) 48%,
+      rgba(26, 30, 29, 0.28) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(22, 25, 24, 0.28) 0%,
+      rgba(22, 25, 24, 0) 34%,
+      rgba(22, 25, 24, 0.42) 100%
+    );
+}
+
+.hero__slogan {
+  position: absolute;
+  top: 90px;
+  font-size: clamp(15px, 1.6vw, 21px);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1.35;
+}
+
+.hero__slogan_position_left {
+  left: var(--container-padding);
+}
+
+.hero__slogan_position_right {
+  right: var(--container-padding);
+  text-align: right;
+}
+
+.hero__badge {
+  position: absolute;
+  top: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 118px;
+  height: 118px;
+}
+
+.hero__badge-ring {
+  width: 100%;
+  height: 100%;
+  animation: badge-spin 18s linear infinite;
+}
+
+.hero__badge-text {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  fill: var(--color-white);
+}
+
+.hero__title {
+  margin: 0;
+  line-height: 0;
+  text-align: center;
+}
+
+.hero__wordmark {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Inner pages (Nosotros, Productos): a top-left label replaces the
+   corner slogans and the rotating badge. */
+.hero_type_inner {
+  min-height: clamp(416px, 61.38vh, 614px);
+}
+
+.hero__label {
+  position: absolute;
+  top: 56px;
+  left: var(--container-padding);
+  max-width: 60%;
+  font-size: clamp(15px, 1.8vw, 22px);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+@keyframes badge-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__badge-ring {
+    animation: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    min-height: 65.34vh;
+  }
+
+  .hero__badge {
+    top: auto;
+    bottom: 40vh;
+    width: 92px;
+    height: 92px;
+  }
+
+  .hero__slogan {
+    top: 36px;
+  }
+
+  .hero__slogan_position_right {
+    top: auto;
+    bottom: 30vh;
+  }
+}

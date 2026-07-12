@@ -1,0 +1,93 @@
+.resistencias {
+  --resistencias-width: min(100%, 860px);
+  padding: clamp(64px, 10vw, 120px) var(--container-padding);
+  background-color: var(--color-dark);
+  color: var(--color-beige);
+}
+
+.resistencias__title {
+  text-align: center;
+}
+
+.resistencias__scale {
+  --knob-position: 4%;
+  position: relative;
+  width: var(--resistencias-width);
+  margin: clamp(40px, 6vw, 64px) auto 0;
+  height: 40px;
+}
+
+.resistencias__bar {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-beige);
+  clip-path: polygon(0 47%, 100% 20%, 100% 80%, 0 53%);
+}
+
+.resistencias__knob {
+  position: absolute;
+  top: 50%;
+  left: var(--knob-position);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: var(--color-beige);
+  /* Dark halo only — clears the bar so it never meets the knob sides. */
+  box-shadow: 0 0 0 3px var(--color-dark);
+  transform: translate(-50%, -50%);
+  transition: left 0.45s ease;
+}
+
+.resistencias__list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  width: var(--resistencias-width);
+  margin: 34px auto 0;
+  list-style: none;
+}
+
+.resistencias__item {
+  min-width: 0;
+  max-width: 100%;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.65;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.resistencias__item:hover {
+  opacity: 1;
+}
+
+.resistencias__item_active {
+  opacity: 1;
+  transform: translateY(-4px);
+}
+
+.resistencias__value {
+  font-size: clamp(15px, 1.8vw, 21px);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.resistencias__caption {
+  margin-top: 10px;
+  max-width: 11em;
+  margin-inline: auto;
+  font-size: 11.5px;
+  line-height: 1.35;
+  opacity: 0.8;
+}
+
+@media (max-width: 720px) {
+  .resistencias__list {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 26px;
+  }
+
+  .resistencias__item:last-child {
+    grid-column: 1 / -1;
+  }
+}

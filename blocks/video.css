@@ -1,0 +1,13 @@
+.video {
+  position: relative;
+  line-height: 0;
+}
+
+.video__player {
+  display: block;
+  width: 100%;
+  height: clamp(360px, 62vh, 640px);
+  object-fit: cover;
+  pointer-events: none;
+  vertical-align: top;
+}

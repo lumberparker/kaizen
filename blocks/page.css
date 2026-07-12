@@ -1,0 +1,157 @@
+:root {
+  --color-blue: #203bff;
+  --color-blue-deep: #182ecc;
+  --color-dark: #3e4f4f;
+  --color-ink: #2b3535;
+  --color-black: #14171a;
+  --color-beige: #dcdbd2;
+  --color-sage: #d6daca;
+  --color-gray: #d2d1cc;
+  --color-white: #f4f3ef;
+  --color-paper: #fdfcfa;
+  /* Body / UI (substitute for the design's commercial "Kern") */
+  --font-main: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  /* Titulares y logotipo del diseño */
+  --font-display: "Chakra Petch", "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --container-padding: clamp(20px, 5vw, 72px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.page {
+  min-width: 320px;
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--color-ink);
+  background-color: var(--color-paper);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.page__defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  line-height: 0.82;
+}
+
+/* Titulares en Chakra Petch (la display del diseño). El texto de UI,
+   párrafos, formularios, navegación y datos se mantienen en --font-main. */
+.hero__slogan,
+.hero__label,
+.intro__title,
+.cta__title,
+.destaca__title,
+.plantas__title,
+.obra__title,
+.pavimentos__title,
+.resistencias__title,
+.showcase__slogan,
+.compromiso__text,
+.encuentra__title,
+.contacto__title,
+.productos__name,
+.marquee__text,
+.footer__bar,
+.loader__text {
+  font-family: var(--font-display);
+}
+
+/* Subtítulos cortos (p. ej. “Resistencias disponibles”, “Concreto confiable”). */
+.resistencias__title,
+.encuentra__title,
+.footer__bar,
+.loader__text {
+  font-size: clamp(21px, 2.6vw, 30px);
+  font-weight: 800;
+  font-stretch: 112%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 26px;
+  border: 1px solid var(--color-ink);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--color-ink);
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.button:hover {
+  background-color: var(--color-ink);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.button_theme_dark {
+  border-color: transparent;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+.button_theme_dark:hover {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Scroll-reveal helpers (activated by scripts/animations.js) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal_visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

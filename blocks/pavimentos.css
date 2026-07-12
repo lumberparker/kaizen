@@ -1,0 +1,62 @@
+.pavimentos {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) minmax(280px, 1fr);
+  gap: clamp(40px, 7vw, 96px);
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(64px, 10vw, 120px) var(--container-padding);
+}
+
+.pavimentos__title {
+  max-width: 340px;
+  font-size: clamp(19px, 2.2vw, 24px);
+  font-weight: 800;
+  font-stretch: 110%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.35;
+  color: var(--color-dark);
+}
+
+.pavimentos__paragraph {
+  max-width: 320px;
+  margin-top: 22px;
+  font-size: 14.5px;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.pavimentos__table {
+  margin-top: 30px;
+  list-style: none;
+}
+
+.pavimentos__row {
+  padding: 9px 0;
+  border-bottom: 1px solid var(--color-dark);
+  font-size: 13.5px;
+}
+
+.pavimentos__row:first-child {
+  border-top: 1px solid var(--color-dark);
+}
+
+.pavimentos__button {
+  display: block;
+  width: fit-content;
+  margin: 36px auto 0;
+}
+
+.pavimentos__figure {
+  display: block;
+  width: clamp(240px, 30vw, 360px);
+  height: auto;
+  margin-inline: auto;
+}
+
+@media (max-width: 720px) {
+  .pavimentos {
+    grid-template-columns: 1fr;
+  }
+}

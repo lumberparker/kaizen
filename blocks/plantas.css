@@ -1,0 +1,84 @@
+.plantas {
+  padding: clamp(72px, 11vw, 130px) var(--container-padding);
+  background-color: var(--color-dark);
+  color: var(--color-beige);
+}
+
+.plantas__title {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 800;
+  font-stretch: 112%;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.plantas__brand {
+  display: inline-block;
+  margin-left: 26px;
+  font-weight: 500;
+  font-stretch: 100%;
+  letter-spacing: 0.2em;
+}
+
+.plantas__list {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2px;
+  margin-top: clamp(40px, 6vw, 72px);
+  list-style: none;
+}
+
+.plantas__item {
+  position: relative;
+  container-type: inline-size;
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 0;
+  max-width: 190px;
+  aspect-ratio: 190 / 166;
+  height: auto;
+  padding: 24px 30px;
+  /* Only the text scales with the hexagon width. */
+  font-size: clamp(11px, 8cqi, 18px);
+  line-height: 1.35;
+  text-align: center;
+  background-color: var(--color-beige);
+  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  transition: color 0.3s ease;
+}
+
+/* clip-path recorta bordes y sombras: el contorno se logra con una capa
+   interior oscura sobre el fondo claro del hexágono */
+.plantas__item::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  z-index: -1;
+  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  background-color: var(--color-dark);
+  transition: background-color 0.3s ease;
+}
+
+.plantas__item:hover {
+  color: var(--color-dark);
+}
+
+.plantas__item:hover::before {
+  background-color: var(--color-beige);
+}
+
+@media (max-width: 720px) {
+  .plantas__brand {
+    display: block;
+    margin: 14px 0 0;
+  }
+}

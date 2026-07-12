@@ -1,0 +1,45 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background-color: var(--color-dark);
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loader_hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader__mark {
+  width: 72px;
+  fill: var(--color-white);
+  animation: loader-pulse 1.2s ease-in-out infinite alternate;
+}
+
+.loader__text {
+  color: var(--color-beige);
+}
+
+@keyframes loader-pulse {
+  from {
+    opacity: 0.35;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader__mark {
+    animation: none;
+  }
+}

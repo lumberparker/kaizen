@@ -1,0 +1,35 @@
+.compromiso {
+  width: 100%;
+  padding: 0 clamp(12px, 2vw, 28px);
+  background-color: var(--color-blue);
+  color: var(--color-gray);
+}
+
+.compromiso__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  width: 100%;
+  margin: 0;
+  font-size: clamp(14px, 2.7vw, 36px);
+  font-weight: 800;
+  font-stretch: 112%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.35;
+  color: var(--color-gray);
+}
+
+/* Distribute words edge-to-edge across the full content width. */
+.compromiso__line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  gap: 0.35em;
+}
+
+.compromiso__line > span {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
