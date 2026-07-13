@@ -1,3 +1,8 @@
+.productos {
+  /* Opaque so the sticky video never shows through closed panels. */
+  background-color: var(--color-dark);
+}
+
 .productos__list {
   list-style: none;
 }

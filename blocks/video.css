@@ -1,20 +1,49 @@
+/* Sticky pin: video locks to the viewport, then following sections
+   (higher z-index + opaque backgrounds) scroll up and cover it. */
 .video {
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  height: 100svh;
+  min-height: 320px;
   line-height: 0;
   overflow: hidden;
+  background-color: var(--color-black);
 }
 
 .video__player {
   display: block;
   width: 100%;
-  height: clamp(240px, 52vh, 640px);
+  height: 100%;
   object-fit: cover;
   pointer-events: none;
   vertical-align: top;
 }
 
+/* Siblings after the video sit above it and slide over as you scroll. */
+.video ~ * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Fallback where svh is unsupported */
+@supports not (height: 100svh) {
+  .video {
+    height: 100vh;
+  }
+}
+
 @media (max-width: 720px) {
-  .video__player {
-    height: min(42vh, 320px);
+  .video {
+    /* Slightly shorter pin on phones so more of the next section peeks. */
+    height: 85svh;
+    min-height: 280px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Keep the cover effect; only motion elsewhere is reduced. */
+  .video {
+    position: sticky;
   }
 }

@@ -1,5 +1,7 @@
 .footer {
   --footer-content-max: 1080px;
+  position: relative;
+  z-index: 1;
   padding-top: clamp(48px, 7vw, 90px);
   background-color: var(--color-paper);
   overflow: hidden;

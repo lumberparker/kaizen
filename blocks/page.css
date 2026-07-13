@@ -41,7 +41,8 @@ html {
   color: var(--color-ink);
   background-color: var(--color-paper);
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  /* clip avoids creating a scroll container (hidden can break position: sticky). */
+  overflow-x: clip;
 }
 
 .page__defs {
