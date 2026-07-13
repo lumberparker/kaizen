@@ -14,21 +14,28 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: clamp(12px, 3vw, 20px);
   width: 100%;
-  padding: 14px var(--container-padding);
+  padding: clamp(12px, 2vw, 16px) var(--container-padding);
   border: none;
   font-family: inherit;
-  font-size: clamp(17px, 2vw, 23px);
+  font-size: clamp(14px, 2.2vw, 23px);
   font-weight: 800;
   font-stretch: 112%;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   text-align: left;
   color: var(--color-beige);
   background-color: var(--color-dark);
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+.productos__name {
+  flex: 1 1 auto;
+  min-width: 0;
+  line-height: 1.25;
+  text-wrap: balance;
 }
 
 .productos__header:hover {
@@ -80,13 +87,25 @@
 .productos__description {
   overflow: hidden;
   padding: 0 var(--container-padding);
-  font-size: 12.5px;
-  letter-spacing: 0.08em;
+  font-size: clamp(12px, 1.4vw, 13.5px);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  line-height: 1.55;
   color: var(--color-dark);
   transition: padding 0.35s ease;
 }
 
 .productos__item_opened .productos__description {
-  padding: 12px var(--container-padding);
+  padding: clamp(12px, 2vw, 16px) var(--container-padding);
+}
+
+@media (max-width: 480px) {
+  .productos__header {
+    letter-spacing: 0.03em;
+  }
+
+  .productos__icon {
+    width: 22px;
+    height: 22px;
+  }
 }

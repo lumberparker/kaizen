@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: clamp(56px, 9vw, 110px) var(--container-padding);
+  padding: var(--section-pad-y) var(--container-padding);
   text-align: center;
 }
 
@@ -11,41 +11,40 @@
   display: inline-flex;
   flex-direction: column;
   align-items: stretch;
+  width: min(100%, 720px);
   max-width: 100%;
 }
 
 .intro__title {
   width: 100%;
-  font-size: clamp(15px, 2.15vw, 24px);
+  font-size: clamp(16px, 2.2vw, 24px);
   font-weight: 800;
   font-stretch: 110%;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   line-height: 1.35;
   color: var(--color-dark);
-  text-align: justify;
-  text-align-last: justify;
+  text-align: center;
+  text-wrap: balance;
 }
 
 .intro__columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  /* Match parent width set by the title (not the paragraph text). */
-  width: 0;
-  min-width: 100%;
-  margin-top: 40px;
-  text-align: justify;
+  gap: clamp(20px, 4vw, 40px);
+  width: 100%;
+  margin-top: clamp(28px, 4vw, 40px);
+  text-align: left;
 }
 
 .intro__paragraph {
-  font-size: clamp(11px, 1.15vw, 12.5px);
-  line-height: 1.55;
+  font-size: clamp(14px, 1.35vw, 15.5px);
+  line-height: 1.65;
   min-width: 0;
 }
 
 .intro__button {
-  margin-top: 44px;
+  margin-top: clamp(32px, 5vw, 44px);
 }
 
 .intro__dots {
@@ -62,16 +61,27 @@
   background-color: var(--color-dark);
 }
 
-@media (max-width: 720px) {
+/* Stack copy early — two narrow columns feel cramped on tablets. */
+@media (max-width: 960px) {
   .intro__body {
     display: flex;
     width: 100%;
   }
 
   .intro__columns {
-    width: 100%;
-    min-width: 0;
     grid-template-columns: 1fr;
-    gap: 22px;
+    gap: 18px;
+    text-align: center;
+  }
+
+  .intro__paragraph {
+    max-width: 42em;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .intro__title {
+    font-size: clamp(15px, 4.2vw, 18px);
   }
 }

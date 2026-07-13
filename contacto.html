@@ -9,6 +9,13 @@
     />
     <title>KAIZEN® — Contacto</title>
     <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="./assets/fonts/Archivo-Variable-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body class="page">
@@ -46,8 +53,12 @@
       <a class="header__brand" href="index.html">
         <img
           class="header__logo"
-          src="./assets/images/logo.png"
+          src="./assets/images/logo.webp"
           alt="KAIZEN — Concreto confiable"
+          width="640"
+          height="181"
+          decoding="async"
+          fetchpriority="high"
         />
       </a>
       <nav class="nav">
@@ -193,10 +204,12 @@
       </div>
       <img
         class="footer__wordmark"
-        src="./assets/images/footer-wordmark.png"
+        src="./assets/images/footer-wordmark.webp"
         alt=""
-        width="1304"
-        height="224"
+        width="1040"
+        height="178"
+        loading="lazy"
+        decoding="async"
         aria-hidden="true"
       />
       <p class="footer__bar">Concreto confiable</p>

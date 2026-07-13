@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   gap: 16px;
-  padding: 26px var(--container-padding);
+  padding: clamp(16px, 3vw, 26px) var(--container-padding);
   color: var(--color-dark);
   text-decoration: none;
 }
@@ -15,8 +15,8 @@
 .header__logo {
   display: block;
   width: auto;
-  height: clamp(54px, 7vw, 82px);
-  max-width: 100%;
+  height: clamp(44px, 7vw, 82px);
+  max-width: min(100%, 320px);
 }
 
 .header__mark {
@@ -50,15 +50,18 @@
 
 .nav__list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: clamp(24px, 6vw, 72px);
+  gap: clamp(12px, 3.5vw, 72px);
   list-style: none;
-  padding: 16px var(--container-padding);
+  padding: 14px var(--container-padding);
 }
 
 .nav__link {
-  font-size: 13px;
-  letter-spacing: 0.22em;
+  display: inline-block;
+  padding: 4px 0;
+  font-size: clamp(11px, 1.2vw, 13px);
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-beige);
   text-decoration: none;
@@ -125,7 +128,8 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-@media (max-width: 720px) {
+/* Burger earlier so 4 nav links never squeeze into a thin strip. */
+@media (max-width: 860px) {
   .header__name {
     font-size: 34px;
   }
@@ -137,6 +141,7 @@
   .nav {
     display: flex;
     justify-content: flex-end;
+    padding-right: 4px;
   }
 
   .nav__burger {
@@ -149,9 +154,10 @@
     left: 0;
     right: 0;
     flex-direction: column;
+    flex-wrap: nowrap;
     align-items: center;
-    gap: 20px;
-    padding: 28px 0;
+    gap: 8px;
+    padding: 20px 0 28px;
     background-color: var(--color-blue);
     transform: translateY(-12px);
     opacity: 0;
@@ -159,9 +165,21 @@
     transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
   }
 
+  .nav__link {
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    padding: 10px 16px;
+  }
+
   .nav_opened .nav__list {
     transform: none;
     opacity: 1;
     visibility: visible;
+  }
+}
+
+@media (max-width: 480px) {
+  .header__logo {
+    height: clamp(40px, 11vw, 52px);
   }
 }

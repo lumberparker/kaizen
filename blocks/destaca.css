@@ -1,9 +1,9 @@
 .destaca {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(48px, 8vw, 110px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(36px, 6vw, 110px);
   align-items: start;
-  padding: clamp(64px, 10vw, 120px) var(--container-padding);
+  padding: var(--section-pad-y) var(--container-padding);
   background-color: var(--color-beige);
   /* One list row ≈ bullet height + vertical padding (+ divider). */
   --destaca-row: calc(2.25 * 15px + 28px + 1px);
@@ -11,22 +11,24 @@
 
 .destaca__info {
   justify-self: end;
+  max-width: 420px;
 }
 
 .destaca__title {
-  /* Three lines ≈ three list rows. */
-  font-size: calc(var(--destaca-row) / 1.2);
+  /* Three lines ≈ three list rows on wide screens. */
+  font-size: clamp(22px, 3.2vw, calc(var(--destaca-row) / 1.2));
   font-weight: 800;
   font-stretch: 112%;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   line-height: 1.2;
   color: var(--color-dark);
+  text-wrap: balance;
 }
 
 .destaca__logo {
   display: block;
-  width: clamp(150px, 14vw, 190px);
+  width: clamp(120px, 14vw, 190px);
   height: auto;
   margin-top: clamp(18px, 2.5vw, 28px);
 }
@@ -39,11 +41,11 @@
 
 .destaca__item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 14px;
   padding: 14px 0;
   border-bottom: 1px solid var(--color-dark);
-  font-size: 15px;
+  font-size: clamp(14px, 1.4vw, 15px);
   line-height: 1.55;
 }
 
@@ -56,17 +58,41 @@
   flex: 0 0 2.25em;
   width: 2.25em;
   height: 2.25em;
-  background: url("../assets/images/bullet.png") center / contain no-repeat;
+  margin-top: 0.1em;
+  background: url("../assets/images/bullet.webp") center / contain no-repeat;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 960px) {
   .destaca {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   .destaca__info,
   .destaca__list {
     justify-self: stretch;
     width: 100%;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+
+  .destaca__logo {
+    margin-inline: auto;
+  }
+
+  .destaca__title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .destaca__item {
+    gap: 10px;
+  }
+
+  .destaca__item::before {
+    flex-basis: 1.75em;
+    width: 1.75em;
+    height: 1.75em;
   }
 }

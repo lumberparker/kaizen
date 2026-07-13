@@ -3,8 +3,8 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: clamp(475px, 77.22vh, 753px);
-  padding: 0 var(--container-padding) 34px;
+  min-height: clamp(420px, 72vh, 753px);
+  padding: 0 var(--container-padding) clamp(24px, 3vw, 34px);
   color: var(--color-white);
   overflow: hidden;
 }
@@ -57,12 +57,13 @@
 
 .hero__slogan {
   position: absolute;
-  top: 90px;
-  font-size: clamp(15px, 1.6vw, 21px);
+  top: clamp(56px, 10vw, 90px);
+  font-size: clamp(13px, 1.6vw, 21px);
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   line-height: 1.35;
+  max-width: min(42%, 220px);
 }
 
 .hero__slogan_position_left {
@@ -76,11 +77,11 @@
 
 .hero__badge {
   position: absolute;
-  top: 64px;
+  top: clamp(48px, 8vw, 64px);
   left: 50%;
   transform: translateX(-50%);
-  width: 118px;
-  height: 118px;
+  width: clamp(88px, 14vw, 118px);
+  height: clamp(88px, 14vw, 118px);
 }
 
 .hero__badge-ring {
@@ -105,25 +106,29 @@
 .hero__wordmark {
   display: block;
   width: 100%;
+  max-width: 1046px;
   height: auto;
+  margin-inline: auto;
 }
 
 /* Inner pages (Nosotros, Productos): a top-left label replaces the
    corner slogans and the rotating badge. */
 .hero_type_inner {
-  min-height: clamp(416px, 61.38vh, 614px);
+  min-height: clamp(360px, 56vh, 614px);
 }
 
 .hero__label {
   position: absolute;
-  top: 56px;
+  top: clamp(40px, 7vw, 56px);
   left: var(--container-padding);
-  max-width: 60%;
-  font-size: clamp(15px, 1.8vw, 22px);
+  right: var(--container-padding);
+  max-width: min(70%, 420px);
+  font-size: clamp(14px, 1.8vw, 22px);
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   line-height: 1.3;
+  text-wrap: balance;
 }
 
 @keyframes badge-spin {
@@ -138,24 +143,68 @@
   }
 }
 
-@media (max-width: 720px) {
+/* Tablet: keep badge centered, ease slogan collision. */
+@media (max-width: 960px) {
   .hero {
-    min-height: 65.34vh;
-  }
-
-  .hero__badge {
-    top: auto;
-    bottom: 40vh;
-    width: 92px;
-    height: 92px;
+    min-height: clamp(400px, 68vh, 640px);
   }
 
   .hero__slogan {
-    top: 36px;
+    max-width: min(38%, 180px);
+    letter-spacing: 0.1em;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    min-height: min(70vh, 560px);
+    justify-content: flex-end;
+    padding-bottom: 28px;
+  }
+
+  .hero_type_inner {
+    min-height: min(58vh, 460px);
+  }
+
+  /* Stack slogans into the top corners without overlapping the wordmark. */
+  .hero__slogan {
+    top: 28px;
+    max-width: 46%;
+    font-size: clamp(12px, 3.4vw, 14px);
+    letter-spacing: 0.08em;
   }
 
   .hero__slogan_position_right {
-    top: auto;
-    bottom: 30vh;
+    top: 28px;
+    bottom: auto;
+  }
+
+  .hero__badge {
+    top: 50%;
+    bottom: auto;
+    transform: translate(-50%, -55%);
+    width: 86px;
+    height: 86px;
+  }
+
+  .hero__label {
+    max-width: 100%;
+    font-size: clamp(14px, 4vw, 18px);
+  }
+
+  .hero__wordmark {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero__badge {
+    width: 72px;
+    height: 72px;
+  }
+
+  .hero__slogan {
+    font-size: 11px;
+    letter-spacing: 0.06em;
   }
 }

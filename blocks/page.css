@@ -13,7 +13,12 @@
   --font-main: "Archivo", "Helvetica Neue", Arial, sans-serif;
   /* Titulares y logotipo del diseño */
   --font-display: "Chakra Petch", "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --container-padding: clamp(20px, 5vw, 72px);
+  /* Horizontal inset: tighter on phones, roomier on desktop. */
+  --container-padding: clamp(16px, 4.5vw, 72px);
+  /* Shared layout rhythm (documented for media-query alignment):
+     phone ≤720px · tablet ≤960px · wide ≤1200px */
+  --content-max: 1120px;
+  --section-pad-y: clamp(48px, 8vw, 120px);
 }
 
 *,
@@ -96,9 +101,17 @@ html {
   color: var(--color-ink);
   background-color: transparent;
   text-decoration: none;
+  text-align: center;
   cursor: pointer;
   transition: background-color 0.25s ease, color 0.25s ease,
     transform 0.25s ease;
+}
+
+@media (max-width: 480px) {
+  .button {
+    width: 100%;
+    max-width: 280px;
+  }
 }
 
 .button:hover {

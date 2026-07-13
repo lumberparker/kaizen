@@ -1,6 +1,6 @@
 .footer {
   --footer-content-max: 1080px;
-  padding-top: clamp(56px, 8vw, 90px);
+  padding-top: clamp(48px, 7vw, 90px);
   background-color: var(--color-paper);
   overflow: hidden;
 }
@@ -23,13 +23,13 @@
 
 .footer__monogram {
   display: block;
-  width: 110px;
+  width: clamp(80px, 18vw, 110px);
   aspect-ratio: 156 / 153;
   margin: 0 auto;
   background-color: var(--color-dark);
-  -webkit-mask: url("../assets/images/footer-monogram.png") center / contain
+  -webkit-mask: url("../assets/images/footer-monogram.webp") center / contain
     no-repeat;
-  mask: url("../assets/images/footer-monogram.png") center / contain no-repeat;
+  mask: url("../assets/images/footer-monogram.webp") center / contain no-repeat;
   animation: footer-monogram-spin 18s linear infinite;
 }
 
@@ -57,13 +57,13 @@
 
 .footer__info {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: end;
-  gap: 24px;
+  gap: clamp(20px, 3vw, 28px);
   box-sizing: border-box;
   width: 100%;
   max-width: var(--footer-content-max);
-  margin: clamp(40px, 6vw, 64px) auto 0;
+  margin: clamp(36px, 5vw, 64px) auto 0;
   padding: 0 var(--container-padding);
 }
 
@@ -89,6 +89,7 @@
   color: var(--color-ink);
   text-decoration: none;
   transition: color 0.25s ease;
+  word-break: break-word;
 }
 
 .footer__link:hover {
@@ -122,7 +123,7 @@
   width: 100%;
   max-width: var(--footer-content-max);
   height: auto;
-  margin-top: clamp(40px, 6vw, 72px);
+  margin-top: clamp(36px, 5vw, 72px);
   margin-right: auto;
   margin-bottom: 0;
   margin-left: auto;
@@ -136,10 +137,11 @@
   z-index: 1;
   margin: 0;
   margin-top: -1px;
-  padding: 14px 0 18px;
+  padding: 14px var(--container-padding) 18px;
   text-align: center;
   color: var(--color-beige);
   background-color: var(--color-dark);
+  font-size: clamp(14px, 2.4vw, 30px);
 }
 
 /* Flush wordmark to the bar so no blue hairline shows on Nosotros. */
@@ -156,15 +158,23 @@
   margin-top: -3px;
 }
 
-@media (max-width: 720px) {
+/* Tablet: stack before three skinny columns. */
+@media (max-width: 960px) {
   .footer__info {
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;
+    gap: 28px;
   }
 
   .footer__socials {
     flex-direction: row;
     align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__bar {
+    letter-spacing: 0.04em;
   }
 }

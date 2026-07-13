@@ -3,8 +3,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: clamp(420px, 68vh, 640px);
-  padding: clamp(56px, 8vw, 96px) var(--container-padding);
+  min-height: clamp(360px, 62vh, 640px);
+  padding: clamp(48px, 7vw, 96px) var(--container-padding);
   overflow: hidden;
 }
 
@@ -32,23 +32,25 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 420px;
+  width: min(100%, 420px);
+  max-width: 100%;
   color: var(--color-beige);
   text-align: left;
 }
 
 .obra__title {
-  font-size: clamp(19px, 2.2vw, 25px);
+  font-size: clamp(17px, 2.4vw, 25px);
   font-weight: 800;
   font-stretch: 110%;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   line-height: 1.35;
+  text-wrap: balance;
 }
 
 .obra__paragraph {
   margin-top: 22px;
-  font-size: 14.5px;
+  font-size: clamp(14px, 1.5vw, 15px);
   line-height: 1.7;
   text-align: left;
   opacity: 0.85;
@@ -59,4 +61,24 @@
   margin-top: 32px;
   background-color: var(--color-beige);
   color: var(--color-dark);
+}
+
+@media (max-width: 720px) {
+  .obra {
+    min-height: min(58vh, 480px);
+    align-items: flex-end;
+    padding-bottom: 40px;
+  }
+
+  .obra__content {
+    width: 100%;
+  }
+
+  .obra::after {
+    background: linear-gradient(
+      180deg,
+      rgba(20, 23, 26, 0.15) 0%,
+      rgba(20, 23, 26, 0.55) 100%
+    );
+  }
 }

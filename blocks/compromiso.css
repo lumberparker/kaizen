@@ -1,6 +1,6 @@
 .compromiso {
   width: 100%;
-  padding: 0 clamp(12px, 2vw, 28px);
+  padding: clamp(28px, 4vw, 40px) clamp(16px, 3vw, 28px);
   background-color: var(--color-blue);
   color: var(--color-gray);
 }
@@ -8,15 +8,16 @@
 .compromiso__text {
   display: flex;
   flex-direction: column;
-  gap: 0.2em;
+  gap: 0.25em;
   width: 100%;
-  margin: 0;
-  font-size: clamp(14px, 2.7vw, 36px);
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: clamp(13px, 2.4vw, 36px);
   font-weight: 800;
   font-stretch: 112%;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  line-height: 1.35;
+  line-height: 1.4;
   color: var(--color-gray);
 }
 
@@ -25,11 +26,38 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  flex-wrap: nowrap;
   width: 100%;
-  gap: 0.35em;
+  gap: 0.3em;
 }
 
 .compromiso__line > span {
-  flex: 0 0 auto;
+  flex: 0 1 auto;
+  min-width: 0;
   white-space: nowrap;
+}
+
+/* On narrow screens, drop the edge-to-edge stretch so words don't collide. */
+@media (max-width: 720px) {
+  .compromiso__text {
+    font-size: clamp(14px, 3.8vw, 18px);
+    letter-spacing: 0.03em;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .compromiso__line {
+    display: block;
+    white-space: normal;
+  }
+
+  .compromiso__line > span {
+    display: inline;
+    white-space: normal;
+  }
+
+  /* Space words like normal sentence fragments. */
+  .compromiso__line > span:not(:last-child)::after {
+    content: " ";
+  }
 }

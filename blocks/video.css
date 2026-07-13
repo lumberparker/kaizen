@@ -1,13 +1,20 @@
 .video {
   position: relative;
   line-height: 0;
+  overflow: hidden;
 }
 
 .video__player {
   display: block;
   width: 100%;
-  height: clamp(360px, 62vh, 640px);
+  height: clamp(240px, 52vh, 640px);
   object-fit: cover;
   pointer-events: none;
   vertical-align: top;
+}
+
+@media (max-width: 720px) {
+  .video__player {
+    height: min(42vh, 320px);
+  }
 }

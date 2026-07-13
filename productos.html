@@ -9,6 +9,19 @@
     />
     <title>KAIZEN® — Productos</title>
     <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="./assets/fonts/Archivo-Variable-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./assets/images/hero-productos.webp"
+      as="image"
+      fetchpriority="high"
+    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body class="page">
@@ -46,8 +59,11 @@
       <a class="header__brand" href="index.html">
         <img
           class="header__logo"
-          src="./assets/images/logo.png"
+          src="./assets/images/logo.webp"
           alt="KAIZEN — Concreto confiable"
+          width="640"
+          height="181"
+          decoding="async"
         />
       </a>
       <nav class="nav">
@@ -81,17 +97,22 @@
       <section class="hero hero_type_inner">
         <img
           class="hero__image"
-          src="./assets/images/hero-productos.jpg"
+          src="./assets/images/hero-productos.webp"
           alt="Panel de concreto con sombras de vegetación"
+          width="1600"
+          height="1066"
+          decoding="async"
+          fetchpriority="high"
         />
         <p class="hero__label">Nuestros<br />productos &amp;<br />servicios</p>
         <h1 class="hero__title">
           <img
             class="hero__wordmark"
-            src="./assets/images/hero-wordmark.png"
+            src="./assets/images/hero-wordmark.webp"
             alt="Kaizen — Concreto confiable"
             width="1046"
             height="238"
+            decoding="async"
           />
         </h1>
       </section>
@@ -180,8 +201,12 @@
       <section class="obra">
         <img
           class="obra__image"
-          src="./assets/images/obra.jpg"
+          src="./assets/images/obra.webp"
           alt="Muro de concreto en penumbra con luz lateral"
+          width="1086"
+          height="655"
+          loading="lazy"
+          decoding="async"
         />
         <div class="obra__content">
           <h2 class="obra__title">
@@ -268,10 +293,12 @@
         </div>
         <img
           class="pavimentos__figure"
-          src="./assets/images/showcase-figure.png"
+          src="./assets/images/showcase-figure.webp"
           alt="Logotipo KAIZEN sobre pavimento de concreto"
           width="492"
           height="507"
+          loading="lazy"
+          decoding="async"
         />
       </section>
 
@@ -282,15 +309,23 @@
           <li class="proyectos__item">
             <img
               class="proyectos__image"
-              src="./assets/images/proj-sky.jpg"
+              src="./assets/images/proj-sky.webp"
               alt="Estructura de concreto con celosías"
+              width="675"
+              height="1200"
+              loading="lazy"
+              decoding="async"
             />
           </li>
           <li class="proyectos__item proyectos__item_type_card">
             <img
               class="proyectos__image"
-              src="./assets/images/proyecto-2.jpg"
+              src="./assets/images/proyecto-2.webp"
               alt="Cuadrilla colando banquetas de concreto"
+              width="960"
+              height="640"
+              loading="lazy"
+              decoding="async"
             />
             <div class="proyectos__overlay">
               <h3 class="proyectos__name">Proyecto<br />087</h3>
@@ -303,8 +338,12 @@
           <li class="proyectos__item">
             <img
               class="proyectos__image"
-              src="./assets/images/proj-stairwell.jpg"
+              src="./assets/images/proj-stairwell.webp"
               alt="Pasillo de concreto aparente"
+              width="800"
+              height="1200"
+              loading="lazy"
+              decoding="async"
             />
           </li>
         </ul>
@@ -355,10 +394,12 @@
       </div>
       <img
         class="footer__wordmark"
-        src="./assets/images/footer-wordmark.png"
+        src="./assets/images/footer-wordmark.webp"
         alt=""
-        width="1304"
-        height="224"
+        width="1040"
+        height="178"
+        loading="lazy"
+        decoding="async"
         aria-hidden="true"
       />
       <p class="footer__bar">Concreto confiable</p>
