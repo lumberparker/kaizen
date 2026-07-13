@@ -4,7 +4,7 @@
   gap: clamp(36px, 6vw, 110px);
   align-items: start;
   padding: var(--section-pad-y) var(--container-padding);
-  background-color: var(--color-beige);
+  background-color: #e3e3e3;
   /* One list row ≈ bullet height + vertical padding (+ divider). */
   --destaca-row: calc(2.25 * 15px + 28px + 1px);
 }
