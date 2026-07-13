@@ -1,11 +1,23 @@
-/* Sticky pin: video locks to the viewport, then following sections
-   (higher z-index + opaque backgrounds) scroll up and cover it. */
-.video {
+/* Sticky pin: marquee + video lock as one unit; following sections
+   (higher z-index + opaque backgrounds) scroll up and cover them. */
+.video-pin {
   position: sticky;
   top: 0;
   z-index: 0;
+  display: flex;
+  flex-direction: column;
   height: 100svh;
-  min-height: 320px;
+  min-height: 360px;
+  background-color: var(--color-black);
+}
+
+.video-pin .marquee {
+  flex-shrink: 0;
+}
+
+.video {
+  flex: 1 1 auto;
+  min-height: 0;
   line-height: 0;
   overflow: hidden;
   background-color: var(--color-black);
@@ -20,30 +32,21 @@
   vertical-align: top;
 }
 
-/* Siblings after the video sit above it and slide over as you scroll. */
-.video ~ * {
+/* Siblings after the pin sit above it and slide over as you scroll. */
+.video-pin ~ * {
   position: relative;
   z-index: 1;
 }
 
-/* Fallback where svh is unsupported */
 @supports not (height: 100svh) {
-  .video {
+  .video-pin {
     height: 100vh;
   }
 }
 
 @media (max-width: 720px) {
-  .video {
-    /* Slightly shorter pin on phones so more of the next section peeks. */
-    height: 85svh;
-    min-height: 280px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  /* Keep the cover effect; only motion elsewhere is reduced. */
-  .video {
-    position: sticky;
+  .video-pin {
+    height: 90svh;
+    min-height: 320px;
   }
 }
