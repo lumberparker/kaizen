@@ -71,16 +71,14 @@ html {
 .contacto__title,
 .productos__name,
 .marquee__text,
-.footer__bar,
-.loader__text {
+.footer__bar {
   font-family: var(--font-display);
 }
 
-/* Subtítulos cortos (p. ej. “Resistencias disponibles”, “Concreto confiable”). */
+/* Subtítulos cortos (p. ej. “Resistencias disponibles”). */
 .resistencias__title,
 .encuentra__title,
-.footer__bar,
-.loader__text {
+.footer__bar {
   font-size: clamp(21px, 2.6vw, 30px);
   font-weight: 800;
   font-stretch: 112%;

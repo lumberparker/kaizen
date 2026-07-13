@@ -12,11 +12,26 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body class="page">
-    <div class="loader" id="loader">
-      <svg class="loader__mark" viewBox="0 0 100 124" aria-hidden="true">
-        <use href="#kaizen-mark" />
-      </svg>
-      <p class="loader__text">Concreto confiable</p>
+    <div class="loader" id="loader" role="status" aria-label="Cargando">
+      <div class="loader__badge" aria-hidden="true">
+        <svg class="loader__badge-ring" viewBox="0 0 120 120">
+          <defs>
+            <path
+              id="loader-badge-circle"
+              d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"
+            />
+          </defs>
+          <text class="loader__badge-text">
+            <textPath
+              href="#loader-badge-circle"
+              textLength="286"
+              lengthAdjust="spacingAndGlyphs"
+            >
+              KAIZEN® / CALIDAD EN CADA MEZCLA /
+            </textPath>
+          </text>
+        </svg>
+      </div>
     </div>
 
     <svg class="page__defs" aria-hidden="true">
