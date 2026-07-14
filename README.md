@@ -99,5 +99,21 @@ npx serve .
   cuatro páginas; el `favicon.svg` usa el mismo trazo.
 - Para activar el video del showcase, coloca el archivo en
   `assets/videos/kaizen.mp4` (el póster es `assets/images/video.jpg`).
-- El formulario simula el envío (no hay backend); conecta tu endpoint en
-  `scripts/contacto.js`.
+- **Formulario de contacto funcional (Netlify + variable de entorno)**:
+  el envío pasa por una función serverless para que la clave nunca llegue al
+  navegador ni al repositorio.
+  1. Consigue una **Access Key** gratuita en [web3forms.com](https://web3forms.com).
+  2. En Netlify: **Site settings → Environment variables** → crea
+     `WEB3FORMS_ACCESS_KEY` con esa clave.
+  3. Despliega. El navegador hace `POST` a `/api/contact`, que redirige a la
+     función `netlify/functions/contact.js`; esta lee la clave del entorno y
+     reenvía el mensaje a Web3Forms.
+  - Piezas: [`netlify.toml`](netlify.toml) (publish + redirect),
+    [`netlify/functions/contact.js`](netlify/functions/contact.js) (la función),
+    [`scripts/contacto.js`](scripts/contacto.js) (validación + `fetch`).
+  - **En local** el `POST` a `/api/contact` no existe con `python3 serve.py`;
+    usa `netlify dev` (Netlify CLI) para probar la función, con la variable
+    `WEB3FORMS_ACCESS_KEY` exportada o en un archivo `.env` (git-ignored).
+- **Servidor de desarrollo sin caché**: `python3 serve.py` (o el perfil
+  `kaizen` de `.claude/launch.json`) sirve el sitio en el puerto 4173 con
+  cabeceras no-cache, para que siempre veas tus últimos cambios.
