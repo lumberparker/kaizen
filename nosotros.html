@@ -3,11 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nosotros | Concreto Premezclado KAIZEN® Guadalajara</title>
     <meta
       name="description"
-      content="Nosotros — En KAIZEN® producimos concreto premezclado de alta calidad con plantas automatizadas de alta precisión para cada proyecto."
+      content="Conoce KAIZEN®: plantas automatizadas, precisión en cada mezcla y concreto premezclado de alta calidad para proyectos en Guadalajara y Jalisco."
     />
-    <title>KAIZEN® — Nosotros</title>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="author" content="KAIZEN® Concretos" />
+    <meta name="theme-color" content="#203bff" />
+    <link rel="canonical" href="https://kaizenconcretos.com/nosotros.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:site_name" content="KAIZEN® Concretos" />
+    <meta property="og:url" content="https://kaizenconcretos.com/nosotros.html" />
+    <meta property="og:title" content="Nosotros | Concreto Premezclado KAIZEN® Guadalajara" />
+    <meta
+      property="og:description"
+      content="Plantas automatizadas y concreto premezclado de alta calidad. Conoce a KAIZEN® en Guadalajara."
+    />
+    <meta
+      property="og:image"
+      content="https://kaizenconcretos.com/assets/images/hero-nosotros.webp"
+    />
+    <meta property="og:image:width" content="1600" />
+    <meta property="og:image:height" content="1066" />
+    <meta property="og:image:alt" content="Columnas de concreto aparente — KAIZEN®" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nosotros | Concreto Premezclado KAIZEN® Guadalajara" />
+    <meta
+      name="twitter:description"
+      content="Plantas automatizadas y concreto premezclado de alta calidad. Conoce a KAIZEN® en Guadalajara."
+    />
+    <meta
+      name="twitter:image"
+      content="https://kaizenconcretos.com/assets/images/hero-nosotros.webp"
+    />
+
     <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml" />
     <link
       rel="preload"
@@ -23,6 +56,51 @@
       fetchpriority="high"
     />
     <link rel="stylesheet" href="./styles.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "AboutPage",
+            "@id": "https://kaizenconcretos.com/nosotros.html",
+            "url": "https://kaizenconcretos.com/nosotros.html",
+            "name": "Nosotros | Concreto Premezclado KAIZEN® Guadalajara",
+            "description": "Conoce KAIZEN®: plantas automatizadas y concreto premezclado de alta calidad en Guadalajara.",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": "https://kaizenconcretos.com/#website",
+              "url": "https://kaizenconcretos.com/",
+              "name": "KAIZEN® Concretos"
+            },
+            "about": {
+              "@type": "Organization",
+              "@id": "https://kaizenconcretos.com/#organization",
+              "name": "KAIZEN® Concretos",
+              "url": "https://kaizenconcretos.com/"
+            },
+            "inLanguage": "es-MX"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Inicio",
+                "item": "https://kaizenconcretos.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Nosotros",
+                "item": "https://kaizenconcretos.com/nosotros.html"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body class="page">
     <div class="loader" id="loader" role="status" aria-label="Cargando">
@@ -66,7 +144,7 @@
           decoding="async"
         />
       </a>
-      <nav class="nav">
+      <nav class="nav" aria-label="Principal">
         <button
           class="nav__burger"
           type="button"
@@ -80,7 +158,7 @@
             <a class="nav__link" href="index.html">Inicio</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link nav__link_active" href="nosotros.html">Nosotros</a>
+            <a class="nav__link nav__link_active" href="nosotros.html" aria-current="page">Nosotros</a>
           </li>
           <li class="nav__item">
             <a class="nav__link" href="productos.html">Productos</a>
@@ -106,13 +184,17 @@
         />
         <p class="hero__label">Nosotros</p>
         <h1 class="hero__title">
+          <span class="visually-hidden"
+            >Nosotros — KAIZEN® concreto premezclado en Guadalajara</span
+          >
           <img
             class="hero__wordmark"
             src="./assets/images/hero-wordmark.webp"
-            alt="Kaizen — Concreto confiable"
+            alt=""
             width="1046"
             height="238"
             decoding="async"
+            aria-hidden="true"
           />
         </h1>
       </section>

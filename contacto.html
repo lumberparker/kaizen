@@ -3,11 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto y Cotización | KAIZEN® Concreto Guadalajara</title>
     <meta
       name="description"
-      content="Contacto KAIZEN® — cotiza tu proyecto de concreto premezclado. Escríbenos y te contactaremos muy pronto."
+      content="Cotiza concreto premezclado con KAIZEN® en Guadalajara. Tel. (52) 331 321 5543 · hello@kaizen.com · Av. La Paz 0123, CP 44549."
     />
-    <title>KAIZEN® — Contacto</title>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="author" content="KAIZEN® Concretos" />
+    <meta name="theme-color" content="#203bff" />
+    <link rel="canonical" href="https://kaizenconcretos.com/contacto.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:site_name" content="KAIZEN® Concretos" />
+    <meta property="og:url" content="https://kaizenconcretos.com/contacto.html" />
+    <meta property="og:title" content="Contacto y Cotización | KAIZEN® Concreto Guadalajara" />
+    <meta
+      property="og:description"
+      content="Escríbenos para cotizar tu proyecto de concreto premezclado. Atención en Guadalajara, Jalisco."
+    />
+    <meta property="og:image" content="https://kaizenconcretos.com/assets/images/obra.webp" />
+    <meta property="og:image:width" content="1086" />
+    <meta property="og:image:height" content="655" />
+    <meta property="og:image:alt" content="Contacto KAIZEN® Concretos Guadalajara" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contacto y Cotización | KAIZEN® Concreto Guadalajara" />
+    <meta
+      name="twitter:description"
+      content="Escríbenos para cotizar tu proyecto de concreto premezclado. Atención en Guadalajara, Jalisco."
+    />
+    <meta name="twitter:image" content="https://kaizenconcretos.com/assets/images/obra.webp" />
+
     <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml" />
     <link
       rel="preload"
@@ -17,6 +44,68 @@
       crossorigin
     />
     <link rel="stylesheet" href="./styles.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ContactPage",
+            "@id": "https://kaizenconcretos.com/contacto.html",
+            "url": "https://kaizenconcretos.com/contacto.html",
+            "name": "Contacto y Cotización | KAIZEN® Concreto Guadalajara",
+            "description": "Formulario y datos de contacto para cotizar concreto premezclado KAIZEN®.",
+            "isPartOf": {
+              "@type": "WebSite",
+              "url": "https://kaizenconcretos.com/",
+              "name": "KAIZEN® Concretos"
+            },
+            "inLanguage": "es-MX"
+          },
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://kaizenconcretos.com/#localbusiness",
+            "name": "KAIZEN® Concretos",
+            "url": "https://kaizenconcretos.com/",
+            "telephone": "+52-331-321-5543",
+            "email": "hello@kaizen.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Av. La Paz 0123",
+              "addressLocality": "Guadalajara",
+              "addressRegion": "Jalisco",
+              "postalCode": "44549",
+              "addressCountry": "MX"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+52-331-321-5543",
+              "contactType": "sales",
+              "email": "hello@kaizen.com",
+              "areaServed": "MX",
+              "availableLanguage": ["es"]
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Inicio",
+                "item": "https://kaizenconcretos.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Contacto",
+                "item": "https://kaizenconcretos.com/contacto.html"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body class="page">
     <div class="loader" id="loader" role="status" aria-label="Cargando">
@@ -61,7 +150,7 @@
           fetchpriority="high"
         />
       </a>
-      <nav class="nav">
+      <nav class="nav" aria-label="Principal">
         <button
           class="nav__burger"
           type="button"
@@ -81,7 +170,7 @@
             <a class="nav__link" href="productos.html">Productos</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link nav__link_active" href="contacto.html">Contacto</a>
+            <a class="nav__link nav__link_active" href="contacto.html" aria-current="page">Contacto</a>
           </li>
         </ul>
       </nav>
@@ -89,7 +178,7 @@
 
     <main class="content">
       <!-- CONTACTO -->
-      <section class="contacto">
+      <section class="contacto" aria-labelledby="contacto-heading">
         <div class="contacto__figure" aria-hidden="true">
           <svg class="contacto__mark" viewBox="0 0 100 124">
             <use href="#kaizen-mark" />
@@ -102,6 +191,9 @@
           method="POST"
           novalidate
         >
+          <h1 id="contacto-heading" class="visually-hidden">
+            Contacto KAIZEN® — Cotiza tu concreto premezclado
+          </h1>
           <h2 class="contacto__title">Hello</h2>
 
           <!-- Web3Forms recibe el envio directamente. La Access Key es

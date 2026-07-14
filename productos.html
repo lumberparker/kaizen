@@ -3,11 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos de Concreto Premezclado | KAIZEN® Guadalajara</title>
     <meta
       name="description"
-      content="Productos y servicios KAIZEN® — concreto hidráulico, de fraguado rápido, con fibras, línea especializada, pavimentos y servicios complementarios."
+      content="Concreto hidráulico, fraguado rápido, con fibras, línea especializada, pavimentos MR y bombeo. Catálogo de productos y servicios KAIZEN® en Guadalajara."
     />
-    <title>KAIZEN® — Productos</title>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="author" content="KAIZEN® Concretos" />
+    <meta name="theme-color" content="#203bff" />
+    <link rel="canonical" href="https://kaizenconcretos.com/productos.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:site_name" content="KAIZEN® Concretos" />
+    <meta property="og:url" content="https://kaizenconcretos.com/productos.html" />
+    <meta
+      property="og:title"
+      content="Productos de Concreto Premezclado | KAIZEN® Guadalajara"
+    />
+    <meta
+      property="og:description"
+      content="Concreto hidráulico, fraguado rápido, con fibras, pavimentos y servicios complementarios. Cotiza con KAIZEN®."
+    />
+    <meta
+      property="og:image"
+      content="https://kaizenconcretos.com/assets/images/hero-productos.webp"
+    />
+    <meta property="og:image:width" content="1600" />
+    <meta property="og:image:height" content="1066" />
+    <meta property="og:image:alt" content="Productos y servicios de concreto KAIZEN®" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Productos de Concreto Premezclado | KAIZEN® Guadalajara"
+    />
+    <meta
+      name="twitter:description"
+      content="Concreto hidráulico, fraguado rápido, con fibras, pavimentos y servicios complementarios. Cotiza con KAIZEN®."
+    />
+    <meta
+      name="twitter:image"
+      content="https://kaizenconcretos.com/assets/images/hero-productos.webp"
+    />
+
     <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml" />
     <link
       rel="preload"
@@ -23,6 +62,86 @@
       fetchpriority="high"
     />
     <link rel="stylesheet" href="./styles.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "CollectionPage",
+            "@id": "https://kaizenconcretos.com/productos.html",
+            "url": "https://kaizenconcretos.com/productos.html",
+            "name": "Productos de Concreto Premezclado | KAIZEN® Guadalajara",
+            "description": "Catálogo de productos y servicios de concreto premezclado KAIZEN®.",
+            "isPartOf": {
+              "@type": "WebSite",
+              "url": "https://kaizenconcretos.com/",
+              "name": "KAIZEN® Concretos"
+            },
+            "inLanguage": "es-MX"
+          },
+          {
+            "@type": "ItemList",
+            "name": "Productos y servicios KAIZEN®",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Concreto hidráulico",
+                "description": "Mezclas convencionales f'c 150 a f'c 350 kg/cm² para todo tipo de obra."
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Concreto de fraguado rápido",
+                "description": "Alcanza resistencia en pocas horas; ideal para reparaciones urgentes."
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Concreto con fibras",
+                "description": "Refuerzo con fibras sintéticas o metálicas; control de agrietamiento."
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Línea especializada",
+                "description": "Rellenos fluidos, jalcreto y mezclas a la medida."
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Servicios complementarios",
+                "description": "Bombeo, asesoría técnica, laboratorio y logística de entrega."
+              },
+              {
+                "@type": "ListItem",
+                "position": 6,
+                "name": "Pavimentos Kaizen®",
+                "description": "Línea de pavimentos de concreto de alto desempeño."
+              }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Inicio",
+                "item": "https://kaizenconcretos.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Productos",
+                "item": "https://kaizenconcretos.com/productos.html"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body class="page">
     <div class="loader" id="loader" role="status" aria-label="Cargando">
@@ -66,7 +185,7 @@
           decoding="async"
         />
       </a>
-      <nav class="nav">
+      <nav class="nav" aria-label="Principal">
         <button
           class="nav__burger"
           type="button"
@@ -83,7 +202,7 @@
             <a class="nav__link" href="nosotros.html">Nosotros</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link nav__link_active" href="productos.html">Productos</a>
+            <a class="nav__link nav__link_active" href="productos.html" aria-current="page">Productos</a>
           </li>
           <li class="nav__item">
             <a class="nav__link" href="contacto.html">Contacto</a>
@@ -106,13 +225,17 @@
         />
         <p class="hero__label">Nuestros<br />productos &amp;<br />servicios</p>
         <h1 class="hero__title">
+          <span class="visually-hidden"
+            >Productos y servicios de concreto premezclado KAIZEN®</span
+          >
           <img
             class="hero__wordmark"
             src="./assets/images/hero-wordmark.webp"
-            alt="Kaizen — Concreto confiable"
+            alt=""
             width="1046"
             height="238"
             decoding="async"
+            aria-hidden="true"
           />
         </h1>
       </section>
