@@ -1,5 +1,7 @@
 /* Sticky pin: marquee + video lock as one unit; following sections
-   (higher z-index + opaque backgrounds) scroll up and cover them. */
+   (higher z-index + opaque backgrounds) scroll up and cover the video.
+   The marquee sits above those sections and is translated up by JS so
+   the blue CTA "pushes" it off rather than sliding over it. */
 .video-pin {
   position: sticky;
   top: 0;
@@ -12,7 +14,10 @@
 }
 
 .video-pin .marquee {
+  position: relative;
+  z-index: 2;
   flex-shrink: 0;
+  will-change: transform;
 }
 
 .video {
