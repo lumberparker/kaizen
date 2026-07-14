@@ -48,7 +48,9 @@
     })
   );
 
-  form.addEventListener("submit", (event) => {
+  const submit = form.querySelector(".contacto__submit");
+
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
     fields.forEach(showError);
 
@@ -57,9 +59,32 @@
       return;
     }
 
-    // No backend yet: simulate a successful submission.
-    status.textContent =
-      "¡Gracias por escribirnos! Te contactaremos muy pronto.";
-    form.reset();
+    submit.disabled = true;
+    status.textContent = "Enviando…";
+
+    try {
+      // Envío directo a Web3Forms (AJAX): no recarga la página y mantiene el
+      // diseño y el mensaje de éxito. La Access Key va en un campo oculto.
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      });
+      const data = await response.json().catch(() => ({}));
+
+      if (response.ok && data.success) {
+        status.textContent =
+          "¡Gracias por escribirnos! Te contactaremos muy pronto.";
+        form.reset();
+      } else {
+        status.textContent =
+          "No se pudo enviar. Inténtalo de nuevo en un momento.";
+      }
+    } catch (error) {
+      status.textContent =
+        "Error de conexión. Inténtalo de nuevo en un momento.";
+    } finally {
+      submit.disabled = false;
+    }
   });
 })();

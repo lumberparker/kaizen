@@ -95,8 +95,38 @@
             <use href="#kaizen-mark" />
           </svg>
         </div>
-        <form class="contacto__form" name="contacto" novalidate>
+        <form
+          class="contacto__form"
+          name="contacto"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          novalidate
+        >
           <h2 class="contacto__title">Hello</h2>
+
+          <!-- Web3Forms recibe el envio directamente. La Access Key es
+               publica por diseno (solo sirve para enviarte correos a ti). -->
+          <input
+            type="hidden"
+            name="access_key"
+            value="4ccd603c-0e14-4528-bcea-ee23cfc4a22c"
+          />
+          <input
+            type="hidden"
+            name="subject"
+            value="Nuevo mensaje desde el sitio KAIZEN"
+          />
+          <input type="hidden" name="from_name" value="Sitio web KAIZEN" />
+          <!-- Trampa anti-bots: oculta para las personas. -->
+          <input
+            type="checkbox"
+            name="botcheck"
+            style="display: none"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+          />
+
           <label class="contacto__field">
             <span class="contacto__label">E-mail</span>
             <input
