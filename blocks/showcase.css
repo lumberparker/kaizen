@@ -55,7 +55,6 @@
 
   .showcase__slogan {
     writing-mode: horizontal-tb;
-    text-align: center;
     height: auto;
     white-space: normal;
     max-width: 16em;
@@ -63,18 +62,28 @@
 
   .showcase__slogan_position_left,
   .showcase__slogan_position_right {
-    align-self: center;
     transform: none;
   }
 
+  /* Upper: left-aligned above the image */
+  .showcase__slogan_position_left {
+    order: -1;
+    align-self: flex-start;
+    text-align: left;
+  }
+
+  /* Image stays screen-centered */
   .showcase__figure {
     order: 0;
     width: min(70vw, 300px);
+    align-self: center;
   }
 
-  /* Order: left slogan → figure → right slogan */
-  .showcase__slogan_position_left {
-    order: -1;
+  /* Lower: right-aligned below the image */
+  .showcase__slogan_position_right {
+    order: 1;
+    align-self: flex-end;
+    text-align: right;
   }
 }
 
