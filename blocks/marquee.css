@@ -7,7 +7,8 @@
 .marquee__track {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 22s linear infinite;
+  /* Duration scaled for two phrase-sets (50% of four copies). */
+  animation: marquee-scroll 40s linear infinite;
 }
 
 .marquee_theme_blue {
@@ -34,7 +35,13 @@
   color: var(--color-black);
 }
 
+/* Loop on half the track: first two copies match the next two, so the
+   restart is seamless and the line never empties mid-viewport. */
 @keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
   to {
     transform: translateX(-50%);
   }
