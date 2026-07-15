@@ -19,7 +19,7 @@
     });
   });
 
-  // Initial state from the markup ("Concreto de fraguado rápido" starts open).
+  // Initial state from markup — all panels start compressed (aria-expanded="false").
   items.forEach((item) => {
     const expanded =
       item.querySelector(".productos__header").getAttribute("aria-expanded") ===
