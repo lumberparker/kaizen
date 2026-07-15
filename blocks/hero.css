@@ -21,7 +21,11 @@
 }
 
 .hero__image[src*="hero-nosotros"] {
-  object-position: 34% 0%;
+  object-fit: cover;
+  /* Centered zoom; slightly above pure bottom so the left tower crown stays in frame. */
+  object-position: center 72%;
+  transform: scale(1.65);
+  transform-origin: center 72%;
 }
 
 /* Legibility scrim: darkens the top (nav/label/slogans) and bottom
