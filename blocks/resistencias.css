@@ -15,12 +15,22 @@
   width: var(--resistencias-width);
   margin: clamp(32px, 5vw, 64px) auto 0;
   height: 40px;
+  cursor: pointer;
+  /* El arrastre del knob es horizontal: sin scroll táctil accidental. */
+  touch-action: none;
 }
 
 .resistencias__bar {
   position: absolute;
   inset: 0;
-  background-color: var(--color-beige);
+  /* Dos tonos: beige hasta el knob; a la derecha, gris apagado como el
+     texto no resaltado (beige al 35% sobre el fondo oscuro). */
+  background: linear-gradient(
+    90deg,
+    var(--color-beige) 0,
+    var(--color-beige) var(--knob-position),
+    rgb(220 219 210 / 0.35) var(--knob-position)
+  );
   clip-path: polygon(0 47%, 100% 20%, 100% 80%, 0 53%);
 }
 
@@ -36,6 +46,13 @@
   box-shadow: 0 0 0 3px var(--color-dark);
   transform: translate(-50%, -50%);
   transition: left 0.45s ease;
+  cursor: grab;
+}
+
+/* Sin transición mientras se arrastra: el knob sigue al puntero. */
+.resistencias__scale_dragging .resistencias__knob {
+  transition: none;
+  cursor: grabbing;
 }
 
 .resistencias__list {

@@ -14,6 +14,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Encuadre: el edificio alto (vértice arriba a la derecha) cubriendo el
+     centro para que el titular quede sobre la fachada oscura y sea legible.
+     El scale compensa el translate para no dejar hueco a la izquierda. */
+  object-position: 50% 64%;
+  transform: translateX(12%) scale(1.3);
   z-index: -1;
 }
 

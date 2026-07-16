@@ -30,7 +30,7 @@
   display: block;
   width: clamp(120px, 14vw, 190px);
   height: auto;
-  margin-top: clamp(18px, 2.5vw, 28px);
+  margin-bottom: clamp(18px, 2.5vw, 28px);
 }
 
 .destaca__list {
