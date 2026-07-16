@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: clamp(280px, 50vh, 560px);
+  min-height: clamp(210px, 37.5vh, 420px);
   padding: clamp(40px, 6vw, 80px) var(--container-padding);
   overflow: hidden;
 }
