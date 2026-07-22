@@ -57,9 +57,9 @@
 
 .resistencias__list {
   display: grid;
-  /* Auto-fit: 5 → 3 → 2 → 1 as width shrinks, no skinny columns. */
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr));
-  gap: clamp(16px, 3vw, 24px) 16px;
+  /* Six resistance columns + a narrower "Y más" cell at the end. */
+  grid-template-columns: repeat(6, minmax(0, 1fr)) auto;
+  gap: clamp(16px, 3vw, 24px) clamp(8px, 1.2vw, 16px);
   width: var(--resistencias-width);
   margin: 34px auto 0;
   list-style: none;
@@ -99,27 +99,122 @@
   opacity: 0.8;
 }
 
-@media (max-width: 720px) {
-  .resistencias__list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+/* "Y más" → lleva al formulario de contacto. No es un stop de la barra. */
+.resistencias__item_type_more {
+  cursor: default;
+  opacity: 1;
+}
 
-  /* Center the odd last item across both columns. */
-  .resistencias__item:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    max-width: 200px;
-    margin-inline: auto;
+.resistencias__more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Alinea el icono con los valores f'c y la etiqueta con las descripciones. */
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.resistencias__more-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(36px, 3.6vw, 46px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: transform 0.25s ease;
+}
+
+/* Aro azul por dentro del círculo blanco, dejando margen (≈62% del fondo). */
+.resistencias__more-icon::before {
+  content: "";
+  position: absolute;
+  inset: 19%;
+  border: 2px solid var(--color-blue);
+  border-radius: 50%;
+}
+
+.resistencias__more-icon svg {
+  /* El signo llena el aro: su trazo abarca 75% del viewBox. */
+  position: relative;
+  width: 56%;
+  fill: none;
+  stroke: var(--color-blue);
+  stroke-width: 1.9;
+  stroke-linecap: round;
+}
+
+.resistencias__more:hover .resistencias__more-icon {
+  transform: scale(1.08);
+}
+
+.resistencias__more-label {
+  font-size: clamp(11px, 1.2vw, 12.5px);
+  line-height: 1.35;
+  opacity: 0.8;
+}
+
+/* Siete columnas se aprietan antes que cinco: rompe a 3 más temprano. */
+@media (max-width: 1100px) {
+  .resistencias__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 400px) {
-  .resistencias__list {
-    grid-template-columns: 1fr;
+/* Móvil: la barra gira a vertical y se coloca al costado de la lista,
+   de modo que cada resistencia queda alineada con su punto en la barra. */
+@media (max-width: 720px) {
+  .resistencias {
+    display: grid;
+    /* El título ocupa todo el ancho; debajo, barra y lista se centran como
+       un solo bloque (columnas 1fr a los lados) y muy juntas entre sí. */
+    grid-template-columns: 1fr 30px min(58vw, 215px) 1fr;
+    grid-template-areas:
+      "title title title title"
+      ".     scale list  .";
+    column-gap: clamp(6px, 2vw, 12px);
   }
 
-  .resistencias__item:last-child:nth-child(odd) {
+  .resistencias__title {
+    grid-area: title;
+  }
+
+  .resistencias__scale {
+    grid-area: scale;
+    width: 30px;
+    height: auto;
+    align-self: stretch;
+    margin: clamp(24px, 5vw, 34px) 0 0;
+  }
+
+  .resistencias__bar {
+    /* Cuña vertical: delgada arriba, ancha abajo. */
+    background: linear-gradient(
+      180deg,
+      var(--color-beige) 0,
+      var(--color-beige) var(--knob-position),
+      rgb(220 219 210 / 0.35) var(--knob-position)
+    );
+    clip-path: polygon(45% 0, 55% 0, 82% 100%, 18% 100%);
+  }
+
+  .resistencias__knob {
+    top: var(--knob-position);
+    left: 50%;
+    transition: top 0.45s ease;
+  }
+
+  .resistencias__list {
+    grid-area: list;
+    grid-template-columns: 1fr;
+    gap: clamp(16px, 4vw, 22px);
+    width: 100%;
+    margin: clamp(24px, 5vw, 34px) 0 0;
+  }
+
+  .resistencias__item_type_more {
     grid-column: auto;
-    max-width: none;
   }
 }
 

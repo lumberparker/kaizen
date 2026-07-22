@@ -6,10 +6,34 @@
   if (!section) return;
 
   const scale = section.querySelector(".resistencias__scale");
-  const items = Array.from(section.querySelectorAll(".resistencias__item"));
+  // The "Y más" cell is a link to contact, not a stop on the scale.
+  const items = Array.from(
+    section.querySelectorAll(
+      ".resistencias__item:not(.resistencias__item_type_more)"
+    )
+  );
+  if (!scale || !items.length) return;
 
-  // Knob stops aligned with the five columns (percent of the bar width).
-  const stops = [4, 27, 50, 73, 96];
+  // On mobile the bar is rotated: it runs vertically beside the list, so
+  // positions are measured along Y instead of X.
+  const isVertical = () => window.matchMedia("(max-width: 720px)").matches;
+
+  // Stops are derived from each item's real centre, so the knob stays
+  // aligned however the current breakpoint lays the list out.
+  let stops = [];
+  const measureStops = () => {
+    const scaleRect = scale.getBoundingClientRect();
+    const vertical = isVertical();
+    const size = vertical ? scaleRect.height : scaleRect.width;
+    if (!size) return;
+    stops = items.map((item) => {
+      const rect = item.getBoundingClientRect();
+      const centre = vertical
+        ? rect.top + rect.height / 2 - scaleRect.top
+        : rect.left + rect.width / 2 - scaleRect.left;
+      return Math.min(100, Math.max(0, (centre / size) * 100));
+    });
+  };
 
   const highlight = (index) => {
     items.forEach((item, i) =>
@@ -25,7 +49,11 @@
     return best;
   };
 
+  let currentIndex = 0;
+
   const select = (index) => {
+    if (!stops.length) measureStops();
+    currentIndex = index;
     scale.style.setProperty("--knob-position", `${stops[index]}%`);
     highlight(index);
   };
@@ -41,11 +69,16 @@
 
   const percentFromEvent = (event) => {
     const rect = scale.getBoundingClientRect();
-    const percent = ((event.clientX - rect.left) / rect.width) * 100;
-    return Math.min(stops[stops.length - 1], Math.max(stops[0], percent));
+    const percent = isVertical()
+      ? ((event.clientY - rect.top) / rect.height) * 100
+      : ((event.clientX - rect.left) / rect.width) * 100;
+    const min = stops[0];
+    const max = stops[stops.length - 1];
+    return Math.min(max, Math.max(min, percent));
   };
 
   scale.addEventListener("pointerdown", (event) => {
+    measureStops();
     dragging = true;
     scale.classList.add("resistencias__scale_dragging");
     scale.setPointerCapture(event.pointerId);
@@ -71,6 +104,37 @@
   scale.addEventListener("pointerup", endDrag);
   scale.addEventListener("pointercancel", endDrag);
 
+  // Hovering "Y más" fills the whole bar — the range keeps going beyond
+  // the listed strengths. Leaving restores the selected resistance.
+  const more = section.querySelector(".resistencias__more");
+  if (more) {
+    more.addEventListener("mouseenter", () => {
+      if (dragging) return;
+      scale.style.setProperty("--knob-position", "100%");
+      highlight(-1);
+    });
+    more.addEventListener("mouseleave", () => {
+      if (dragging) return;
+      select(currentIndex);
+    });
+  }
+
+  // Keep the knob on its column when the layout reflows.
+  let activeIndex = 0;
+  const rememberActive = () => {
+    const found = items.findIndex((item) =>
+      item.classList.contains("resistencias__item_active")
+    );
+    activeIndex = found === -1 ? 0 : found;
+  };
+  window.addEventListener("resize", () => {
+    rememberActive();
+    measureStops();
+    select(activeIndex);
+  });
+
+  measureStops();
+
   // Sweep across the scale the first time the section becomes visible.
   let played = false;
   const observer = new IntersectionObserver(
@@ -78,6 +142,7 @@
       if (played || !entries.some((entry) => entry.isIntersecting)) return;
       played = true;
       observer.disconnect();
+      measureStops();
       items.forEach((_, i) => setTimeout(() => select(i), 500 * i));
       setTimeout(() => select(0), 500 * items.length);
     },
